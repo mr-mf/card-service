@@ -122,4 +122,15 @@ public class AccountRepository {
         }
         return account;
     }
+
+    // get account for update
+
+    public Account getAccountForUpdate(String creditCardNumber, Connection connection) {
+        return null;
+    }
+
+    // update the account
+
+    public void updateAccount(Account account, Connection connection) {
+    }
 }

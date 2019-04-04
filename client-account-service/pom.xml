@@ -112,7 +112,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.mishas.stuff.ms.JettyServer</mainClass>
+                            <mainClass>com.mishas.stuff.cas.JettyServer</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

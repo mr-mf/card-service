@@ -4,7 +4,7 @@ import com.mishas.stuff.cas.repository.model.Account;
 
 import java.math.BigDecimal;
 
-public class AccountDto {
+public class AccountDto implements IDto {
 
     private Long clientId;
     private BigDecimal balance;

@@ -12,9 +12,8 @@ CREATE DATABASE client_account_database WITH OWNER client_account_service;
 CREATE TABLE IF NOT EXISTS account(
   id SERIAL PRIMARY KEY,
   balance decimal(12,2) NOT NULL,
-  status VARCHAR (10) NOT NULL,
   currency VARCHAR (3) NOT NULL,
-  card_number VARCHAR (50) NOT NULL
+  card_number VARCHAR (50) UNIQUE NOT NULL
 );
 
 -- transaction status table
@@ -25,13 +24,13 @@ CREATE TABLE IF NOT EXISTS transaction_status(
 );
 
 -- record of the transaction
-CREATE TABLE IF NOT EXISTS transaction(
-  id SERIAL PRIMARY KEY,
-  correlation_id VARCHAR (50) REFERENCES transaction_status (id) ON UPDATE NO ACTION ON DELETE NO ACTION,
-  transaction_amount decimal(12,2) NOT NULL,
-  transaction_currency VARCHAR (3) NOT NULL,
-  client_card_number VARCHAR (50) REFERENCES account (card_number) ON UPDATE NO ACTION ON DELETE NO ACTION
-);
+-- CREATE TABLE IF NOT EXISTS transaction(
+--   id SERIAL PRIMARY KEY,
+--   correlation_id VARCHAR (50) REFERENCES transaction_status (id) ON UPDATE NO ACTION ON DELETE NO ACTION,
+--   transaction_amount decimal(12,2) NOT NULL,
+--   transaction_currency VARCHAR (3) NOT NULL,
+--   client_card_number VARCHAR (50) REFERENCES account (card_number) ON UPDATE NO ACTION ON DELETE NO ACTION
+-- );
 
 -- grant CRUD rights to mastercard_service user
 GRANT SELECT, INSERT, UPDATE, DELETE

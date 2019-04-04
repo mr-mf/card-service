@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: "postgres:latest"
+    volumes:
+      - ./schema/:/docker-entrypoint-initdb.d/
+    ports:
+    - "5432:5432"
+  client-account-service:
+    build: .
+    depends_on:
+    - postgres
+    ports:
+    - "8082:8080"
+
+volumes:
+  schema:

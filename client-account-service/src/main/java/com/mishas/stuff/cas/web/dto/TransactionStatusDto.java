@@ -10,14 +10,14 @@ import com.mishas.stuff.cas.utils.Status;
 
 import java.time.LocalDateTime;
 
-public class TransactionStatusDto {
+public class TransactionStatusDto implements IDto {
 
     private String id;
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSSS")
     private LocalDateTime transactionTimestamp;
-    private Status transactionStaus;
+    private Status transactionStatus;
 
     public TransactionStatusDto() {
         super();
@@ -26,13 +26,13 @@ public class TransactionStatusDto {
     public TransactionStatusDto(TransactionStatus transactionStatus) {
         this.id = transactionStatus.getId();
         this.transactionTimestamp = transactionStatus.getTransactionTimestamp();
-        this.transactionStaus = transactionStatus.getTransactionStatus();
+        this.transactionStatus = transactionStatus.getTransactionStatus();
     }
 
     public TransactionStatusDto(String id, LocalDateTime transactionTimestamp) {
         this.id = id;
         this.transactionTimestamp = transactionTimestamp;
-        this.transactionStaus = Status.PENDING;
+        this.transactionStatus = Status.PENDING;
     }
 
     public String getId() {
@@ -44,7 +44,11 @@ public class TransactionStatusDto {
     }
 
     public Status getTransactionStaus() {
-        return transactionStaus;
+        return transactionStatus;
+    }
+
+    public void setTransactionStaus(Status transactionStaus) {
+        this.transactionStatus = transactionStaus;
     }
 
     @Override
@@ -52,7 +56,7 @@ public class TransactionStatusDto {
         return "TransactionStatusDto{" +
                 "id='" + id + '\'' +
                 ", transactionTimestamp=" + transactionTimestamp +
-                ", transactionStaus=" + transactionStaus +
+                ", transactionStatus=" + transactionStatus +
                 '}';
     }
 }

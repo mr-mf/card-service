@@ -28,6 +28,10 @@ public class Account implements IModel {
         this.cardNumber = accountDto.getCardNumber();
     }
 
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
     public Long getClientId() {
         return clientId;
     }
