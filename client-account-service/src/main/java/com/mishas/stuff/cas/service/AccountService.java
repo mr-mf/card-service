@@ -62,7 +62,7 @@ public class AccountService implements IAccountService {
                 accountRepository.updateAccount(account, connection);
             }
             // update the transaction status table
-            transactionStatusRepository.updateTransactionStatus(new TransactionStatus(transactionStatusDto), connection);
+            transactionStatusRepository.createTransactionStatus(new TransactionStatus(transactionStatusDto), connection);
             connection.commit();
 
         } catch (SQLException se) {

@@ -125,12 +125,62 @@ public class AccountRepository {
 
     // get account for update
 
-    public Account getAccountForUpdate(String creditCardNumber, Connection connection) {
-        return null;
+    public Account getAccountForUpdate(String creditCardNumber, Connection connection) throws SQLException {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        Account account = null;
+        try {
+            DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
+            pst = connection.prepareStatement(
+                    create.select(
+                            field("ID"),
+                            field("BALANCE"),
+                            field("CURRENCY"),
+                            field("CARD_NUMBER")
+                    )
+                            .from(table("ACCOUNT"))
+                            .where(field("CARD_NUMBER").eq(creditCardNumber))
+                            .forUpdate()
+                            .getSQL()
+            );
+            pst.setString(1, creditCardNumber);
+            // execute query
+            rs = pst.executeQuery();
+            if (!rs.next()) {
+                // have to kill it because it will be used as part of transaction
+                throw new SQLException("Bank account for the credit card: " + creditCardNumber + " does not exist");
+            } else {
+                account = new Account(
+                        rs.getLong("ID"),
+                        rs.getBigDecimal("BALANCE"),
+                        rs.getString("CURRENCY"),
+                        rs.getString("CARD_NUMBER")
+                );
+            }
+        } finally {
+            try {if (pst != null) { pst.close(); } } catch (SQLException sq1) {}
+            try {if (rs != null) { rs.close(); } } catch (SQLException sq2) {}
+        }
+        return account;
     }
 
     // update the account
 
-    public void updateAccount(Account account, Connection connection) {
+    public void updateAccount(Account account, Connection connection) throws SQLException {
+        PreparedStatement pst = null;
+        try {
+            DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
+            pst = connection.prepareStatement(
+                    create.update(table("ACCOUNT"))
+                            .set(field("BALANCE"), account.getBalance())
+                            .where(field("ID").eq(account.getClientId()))
+                            .getSQL()
+            );
+            pst.setBigDecimal(1, account.getBalance());
+            pst.setLong(2, account.getClientId());
+            pst.executeUpdate();
+        } finally {
+            try {if (pst != null) { pst.close(); } } catch (SQLException sq) {}
+        }
     }
 }
