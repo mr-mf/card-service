@@ -1,6 +1,7 @@
 package com.mishas.stuff.cas.repository.dao;
 
 import com.mishas.stuff.cas.repository.model.TransactionStatus;
+import com.mishas.stuff.cas.utils.Status;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
 
@@ -42,12 +43,29 @@ public class TransactionStatusRepository {
         }
     }
 
-    public TransactionStatus getTransactionStatus(String id, Connection connection) {
-        return null;
-    }
-
-    public TransactionStatus getTransactionStatusForUpdate(String id, Connection connection) {
-        return null;
+    public TransactionStatus getTransactionStatusForUpdate(String id, Connection connection) throws SQLException {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        TransactionStatus transactionStatus = null;
+        try {
+            DSLContext create = DSL.using(connection, POSTGRES);
+            pst = connection.prepareStatement(
+                    create.select().from(table("TRANSACTION_STATUS")).where(field("ID").eq(id)).forUpdate().getSQL()
+            );
+            pst.setString(1, id);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                transactionStatus = new TransactionStatus(
+                        rs.getString("TRANSACTION_STATUS_ID"),
+                        rs.getTimestamp("TRANSACTION_TIMESTAMP").toLocalDateTime(),
+                        Status.valueOf(rs.getString("STATUS"))
+                );
+            }
+        } finally {
+            try {if (rs != null) { rs.close(); } } catch (SQLException sq) {}
+            try {if (pst != null) { pst.close(); } } catch (SQLException sq2) {}
+        }
+        return transactionStatus;
     }
 
     public void updateTransactionStatus(TransactionStatus transactionStatus, Connection connection) throws SQLException {

@@ -27,7 +27,6 @@ public class AccountRepository {
         ResultSet rs = null;
 
         // create account
-
         try {
             connection = DataSource.getConnection();
             DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
