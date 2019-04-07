@@ -56,7 +56,7 @@ public class TransactionStatusRepository {
             rs = pst.executeQuery();
             if (rs.next()) {
                 transactionStatus = new TransactionStatus(
-                        rs.getString("TRANSACTION_STATUS_ID"),
+                        rs.getString("ID"),
                         rs.getTimestamp("TRANSACTION_TIMESTAMP").toLocalDateTime(),
                         Status.valueOf(rs.getString("STATUS"))
                 );

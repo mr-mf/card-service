@@ -59,6 +59,7 @@ public class AccountService implements IAccountService {
                 transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
             } catch (SQLException seIgnore) {
                 // ignore
+                connection.rollback();
             }
             transactionStatus = transactionStatusRepository.getTransactionStatusForUpdate(transactionStatus.getId(), connection);
             if (!transactionStatus.getTransactionStatus().toString().equals(Status.PENDING.toString())) {
