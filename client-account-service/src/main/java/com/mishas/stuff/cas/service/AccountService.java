@@ -6,6 +6,7 @@ import com.mishas.stuff.cas.repository.dao.TransactionStatusRepository;
 import com.mishas.stuff.cas.repository.model.Account;
 import com.mishas.stuff.cas.repository.model.TransactionStatus;
 import com.mishas.stuff.cas.utils.Status;
+import com.mishas.stuff.cas.utils.exceptions.DatabaseException;
 import com.mishas.stuff.cas.web.dto.AccountDto;
 import com.mishas.stuff.cas.web.dto.TransactionDto;
 import com.mishas.stuff.cas.web.dto.TransactionStatusDto;
@@ -15,8 +16,11 @@ import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import org.apache.log4j.Logger;
 
 public class AccountService implements IAccountService {
+
+    private static final Logger logger = Logger.getLogger(AccountService.class);
 
     private AccountRepository accountRepository;
     private TransactionStatusRepository transactionStatusRepository;
@@ -40,7 +44,7 @@ public class AccountService implements IAccountService {
 
     @Override
     public TransactionStatusDto updateAccount(TransactionDto transactionDto) {
-        TransactionStatusDto transactionStatusDto = null;
+        TransactionStatus transactionStatus = null;
         Connection connection = null;
         try {
             connection = DataSource.getConnection();
@@ -48,35 +52,49 @@ public class AccountService implements IAccountService {
             // get the account balance and the transaction amount and calculate the difference
             BigDecimal accountBalance = account.getBalance().setScale(2, RoundingMode.HALF_UP);
             BigDecimal transaction = transactionDto.getTransactionAmount().setScale(2, RoundingMode.HALF_UP);
-            BigDecimal remainingAccountBalance = accountBalance.subtract(transaction).setScale(2, RoundingMode.HALF_UP);
-
-            transactionStatusDto = new TransactionStatusDto(transactionDto.getCorrelationId(), LocalDateTime.now());
-            if (remainingAccountBalance.compareTo(BigDecimal.ZERO) < 0) {
-                // set transaction status to DECLINED
-                transactionStatusDto.setTransactionStaus(Status.DECLINED);
-            } else {
+            BigDecimal remainingAccountBalance;
+            transactionStatus = new TransactionStatus(transactionDto.getCorrelationId(), LocalDateTime.now(), Status.PENDING);
+            // update the transaction status table
+            transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
+            // determine if transaction is negative or positive
+            if (transaction.compareTo(BigDecimal.ZERO) > 0) {
+                remainingAccountBalance = accountBalance.add(transaction).setScale(2, RoundingMode.HALF_UP);
                 // set transaction status to ACCEPTED
-                transactionStatusDto.setTransactionStaus(Status.ACCEPTED);
-                // update the balance for the account model
+                transactionStatus.setTransactionStatus(Status.ACCEPTED);
+            } else {
+                transaction = transaction.abs();
+                remainingAccountBalance = accountBalance.subtract(transaction).setScale(2, RoundingMode.HALF_UP);
+                // decline or approve
+                if (remainingAccountBalance.compareTo(BigDecimal.ZERO) < 0) {
+                    // set transaction status to DECLINED
+                    transactionStatus.setTransactionStatus(Status.DECLINED);
+                } else {
+                    // set transaction status to ACCEPTED
+                    transactionStatus.setTransactionStatus(Status.ACCEPTED);
+                }
+            }
+
+            // update the transaction status table
+            transactionStatusRepository.updateTransactionStatus(transactionStatus, connection);
+            if (transactionStatus.getTransactionStatus().toString().equals(Status.ACCEPTED.toString())) {
+                // update the balance for the account model and update the account repository
                 account.setBalance(remainingAccountBalance);
                 accountRepository.updateAccount(account, connection);
             }
-            // update the transaction status table
-            transactionStatusRepository.createTransactionStatus(new TransactionStatus(transactionStatusDto), connection);
             connection.commit();
 
         } catch (SQLException se) {
-
+            logger.error("Could not update client Account: " + se.getMessage());
             try {
                 connection.rollback();
             } catch (SQLException | NullPointerException se2) {
 
             }
-
+            throw new DatabaseException("Could not update client Account", se);
         } finally {
             try {if (connection != null) { connection.close(); } } catch (SQLException sq3) { }
         }
-        return transactionStatusDto;
+        return new TransactionStatusDto(transactionStatus);
     }
 
 }

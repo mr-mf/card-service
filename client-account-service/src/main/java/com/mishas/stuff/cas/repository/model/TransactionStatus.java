@@ -17,6 +17,10 @@ public class TransactionStatus implements IModel {
         this.transactionStatus = transactionStatusDto.getTransactionStaus();
     }
 
+    public void setTransactionStatus(Status transactionStatus) {
+        this.transactionStatus = transactionStatus;
+    }
+
     public TransactionStatus(String id, LocalDateTime transactionTimestamp, Status transactionStatus) {
         this.id = id;
         this.transactionTimestamp = transactionTimestamp;

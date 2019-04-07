@@ -1,7 +1,10 @@
 package com.mishas.stuff.cas.web.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.math.BigDecimal;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TransactionDto implements IDto {
 
     private String correlationId;

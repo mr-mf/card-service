@@ -4,6 +4,8 @@ import com.mishas.stuff.cas.service.AccountService;
 import com.mishas.stuff.cas.service.IAccountService;
 import com.mishas.stuff.cas.web.dto.AccountDto;
 import com.mishas.stuff.cas.web.dto.ResponseDto;
+import com.mishas.stuff.cas.web.dto.TransactionDto;
+import com.mishas.stuff.cas.web.dto.TransactionStatusDto;
 import org.eclipse.jetty.http.HttpStatus;
 
 import javax.ws.rs.*;
@@ -35,6 +37,15 @@ public class AccountController {
        AccountDto accountDto =  accountService.getAccount(id);
         return Response.status(HttpStatus.OK_200).entity(
                 new ResponseDto(HttpStatus.OK_200, "OK", Map.of("account", accountDto))
+        ).build();
+    }
+
+    @PUT
+    @Path("account")
+    public Response updateAccount(TransactionDto transactionDto) {
+        TransactionStatusDto transactionStatusDto = accountService.updateAccount(transactionDto);
+        return Response.status(HttpStatus.OK_200).entity(
+                new ResponseDto(HttpStatus.OK_200, "OK", Map.of("transactionStatus", transactionStatusDto))
         ).build();
     }
 }

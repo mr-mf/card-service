@@ -15,13 +15,31 @@ import static org.jooq.impl.DSL.table;
 
 public class TransactionStatusRepository {
 
-    public String createTransactionStatus(TransactionStatus transactionStatus, Connection connection) throws SQLException {
+    public void createTransactionStatus(TransactionStatus transactionStatus, Connection connection) throws SQLException {
+        PreparedStatement pst = null;
         try {
-
+            DSLContext create = DSL.using(connection, POSTGRES);
+            // transaction status query
+            pst = connection.prepareStatement(
+                    create.insertInto(
+                            table("TRANSACTION_STATUS"),
+                            field("ID"),
+                            field("TRANSACTION_TIMESTAMP"),
+                            field("STATUS")
+                    ).values(
+                            transactionStatus.getId(),
+                            transactionStatus.getTransactionTimestamp(),
+                            transactionStatus.getTransactionStatus().toString()
+                    ).getSQL()
+            );
+            // status params
+            pst.setString(1, transactionStatus.getId());
+            pst.setString(2, transactionStatus.getTransactionTimestamp().toString());
+            pst.setString(3, transactionStatus.getTransactionStatus().toString());
+            pst.executeUpdate();
         } finally {
-
+            try {if (pst != null) { pst.close(); } } catch (SQLException sq) {}
         }
-        return null;
     }
 
     public TransactionStatus getTransactionStatus(String id, Connection connection) {
