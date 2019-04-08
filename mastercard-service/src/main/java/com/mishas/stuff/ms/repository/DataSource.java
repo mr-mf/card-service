@@ -12,7 +12,7 @@ public class DataSource {
     private static HikariDataSource ds;
 
     static {
-        config.setJdbcUrl( "jdbc:postgresql://postgres:5432/mastercard_database" );
+        config.setJdbcUrl( "jdbc:postgresql://postgres-mastercard-service:5432/mastercard_database" );
         config.setUsername( "mastercard_service" );
         config.setPassword( "mastercard_password" );
         config.setMaximumPoolSize(30);

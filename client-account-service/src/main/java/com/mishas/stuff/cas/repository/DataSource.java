@@ -12,7 +12,7 @@ public class DataSource {
     private static HikariDataSource ds;
 
     static {
-        config.setJdbcUrl( "jdbc:postgresql://postgres:5432/client_account_database" );
+        config.setJdbcUrl( "jdbc:postgresql://postgres-client-account-service:5432/client_account_database" );
         config.setUsername( "client_account_service" );
         config.setPassword( "client_account_password" );
         config.setMaximumPoolSize(30);

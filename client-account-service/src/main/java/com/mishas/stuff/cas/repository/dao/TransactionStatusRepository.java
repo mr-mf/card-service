@@ -46,7 +46,7 @@ public class TransactionStatusRepository {
     public TransactionStatus getTransactionStatusForUpdate(String id, Connection connection) throws SQLException {
         PreparedStatement pst = null;
         ResultSet rs = null;
-        TransactionStatus transactionStatus = null;
+        TransactionStatus transactionStatus;
         try {
             DSLContext create = DSL.using(connection, POSTGRES);
             pst = connection.prepareStatement(
@@ -60,6 +60,8 @@ public class TransactionStatusRepository {
                         rs.getTimestamp("TRANSACTION_TIMESTAMP").toLocalDateTime(),
                         Status.valueOf(rs.getString("STATUS"))
                 );
+            } else {
+                throw new SQLException("transaction status is null");
             }
         } finally {
             try {if (rs != null) { rs.close(); } } catch (SQLException sq) {}

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  postgres-mastercard-service:
+    image: "postgres:latest"
+    volumes:
+      - ./mastercard-service/schema-mastercard/:/docker-entrypoint-initdb.d/
+    ports:
+    - "5431:5432"
+  mastercard-service:
+    build: ./mastercard-service/
+    depends_on:
+    - postgres-mastercard-service
+    ports:
+    - "8081:8080"
+  postgres-client-account-service:
+    image: "postgres:latest"
+    volumes:
+      - ./client-account-service/schema-client-account/:/docker-entrypoint-initdb.d/
+    ports:
+    - "5432:5432"
+  client-account-service:
+    build: ./client-account-service/
+    depends_on:
+    - postgres-client-account-service
+    ports:
+    - "8082:8080"
+
+volumes:
+  schema-mastercard:
+  schema-client-account:

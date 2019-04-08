@@ -1,17 +1,17 @@
 version: '3'
 services:
-  postgres:
+  postgres-mastercard-service:
     image: "postgres:latest"
     volumes:
-      - ./schema/:/docker-entrypoint-initdb.d/
+      - ./schema-mastercard/:/docker-entrypoint-initdb.d/
     ports:
     - "5431:5432"
   mastercard-service:
     build: .
     depends_on:
-    - postgres
+    - postgres-mastercard-service
     ports:
     - "8081:8080"
 
 volumes:
-  schema:
+  schema-mastercard:
