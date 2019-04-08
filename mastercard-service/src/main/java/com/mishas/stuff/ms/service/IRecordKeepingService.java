@@ -7,7 +7,7 @@ import com.mishas.stuff.ms.web.dto.TransactionStatusDto;
 import java.util.List;
 
 public interface IRecordKeepingService {
-    public void createTransaction(TransactionDto transactionDto);
+    public TransactionStatusDto createTransaction(TransactionDto transactionDto);
 
     public List<IDto> getTransaction(String correlationId);
 

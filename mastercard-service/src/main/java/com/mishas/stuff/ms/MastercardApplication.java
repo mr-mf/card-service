@@ -2,6 +2,8 @@ package com.mishas.stuff.ms;
 
 import com.mishas.stuff.ms.repository.dao.TransactionDao;
 import com.mishas.stuff.ms.service.RecordKeepingService;
+import com.mishas.stuff.ms.service.TransactionApprovalService;
+import com.mishas.stuff.ms.web.client.ClientAccountSerivceHttpClient;
 import com.mishas.stuff.ms.web.controller.CardController;
 import com.mishas.stuff.ms.web.exceptionmapper.DatabaseExcpetionMapper;
 import io.swagger.jaxrs.config.BeanConfig;
@@ -33,13 +35,15 @@ public class MastercardApplication extends Application {
 
     @Override
     public Set<Object> getSingletons() {
-        // create DAO layer
-        TransactionDao transactionDao = new TransactionDao();
         // create service layer
-        RecordKeepingService  recordKeepingService= new RecordKeepingService(transactionDao);
+        RecordKeepingService  recordKeepingService = new RecordKeepingService(
+                new TransactionDao(),
+                new TransactionApprovalService(
+                        new ClientAccountSerivceHttpClient()
+                )
+        );
         // add resources
         final Set<Object> singletons = new HashSet<>();
-
         singletons.add(new CardController(recordKeepingService));
         singletons.add(new DatabaseExcpetionMapper());
         return singletons;

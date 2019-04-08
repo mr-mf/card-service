@@ -50,6 +50,10 @@ public class TransactionDto implements IDto {
         return id;
     }
 
+    public void setCorrelationId(String correlationId) {
+        this.correlationId = correlationId;
+    }
+
     public String getMastercardTransactionId() {
         return mastercardTransactionId;
     }

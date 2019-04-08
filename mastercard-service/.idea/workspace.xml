@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="331e5b7b-7551-4637-b559-308dc29486ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionApprovalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client-account-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-account-service/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-account-service/schema/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/schema-client-account/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/schema-mastercard/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,7 +43,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="25" />
-          <entry key="java" value="8970" />
+          <entry key="java" value="10085" />
           <entry key="properties" value="2" />
           <entry key="sql" value="1027" />
           <entry key="xml" value="428" />
@@ -48,7 +52,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8970" />
+          <entry key="JAVA" value="10085" />
           <entry key="PLAIN_TEXT" value="25" />
           <entry key="Properties" value="2" />
           <entry key="SQL" value="1027" />
@@ -58,7 +62,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="134" />
+          <entry key="java" value="155" />
           <entry key="properties" value="6" />
           <entry key="sql" value="17" />
           <entry key="xml" value="7" />
@@ -67,7 +71,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="134" />
+          <entry key="JAVA" value="155" />
           <entry key="Properties" value="6" />
           <entry key="SQL" value="17" />
           <entry key="XML" value="7" />
@@ -79,64 +83,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="239" column="30" selection-start-line="239" selection-start-column="30" selection-end-line="239" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/DataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/model/TransactionStatus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schema-mastercard/schema.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="90">
+              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="480">
+              <caret line="32" column="43" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionApprovalService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/Status.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/impl/TransactionStatusDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ICorrelationIdService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/HickariDataSource.java" />
@@ -182,21 +167,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/utils/exceptions/DataBaseException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/DatabaseExcpetionMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/schema.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionStatusDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/JettyServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/DataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/utils/exceptions/DatabaseException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/model/Transaction.java" />
         <option value="$PROJECT_DIR$/schema/schema.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/DataSource.java" />
         <option value="$PROJECT_DIR$/docker-compose.yaml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionApprovalService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" />
       </list>
     </option>
   </component>
@@ -298,6 +287,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ms" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ms" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -318,6 +316,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ms" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ms" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
@@ -356,7 +364,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554711198436" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554736983942" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -482,7 +490,7 @@
       <workItem from="1554453681602" duration="19000" />
       <workItem from="1554637950895" duration="1005000" />
       <workItem from="1554639393212" duration="694000" />
-      <workItem from="1554649577791" duration="644000" />
+      <workItem from="1554649577791" duration="10642000" />
     </task>
     <servers />
   </component>
@@ -507,7 +515,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107614000" />
+    <option name="totallyTimeSpent" value="117612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,7 +530,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34432235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30463982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -531,7 +539,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.2510204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.2510204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -607,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/model/IModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -640,20 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -705,20 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/model/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -736,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="45" column="65" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/model/TransactionStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -753,6 +719,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/schema-mastercard/schema.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -760,30 +740,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="239" column="30" selection-start-line="239" selection-start-column="30" selection-end-line="239" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/DataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+        <state relative-caret-position="360">
+          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yaml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="165">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+          <folding>
+            <element signature="e#1763#1764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="968">
+          <caret line="252" column="104" selection-start-line="252" selection-start-column="104" selection-end-line="252" selection-end-column="104" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionApprovalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

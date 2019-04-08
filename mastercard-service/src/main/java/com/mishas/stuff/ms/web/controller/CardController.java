@@ -29,16 +29,19 @@ public class CardController {
     @Path("transaction")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response makePayment(TransactionDto transactionDto) {
-        recordKeepingService.createTransaction(transactionDto);
-        return Response.status(HttpStatus.CREATED_201).build();
+        TransactionStatusDto transactionStatusDto = recordKeepingService.createTransaction(transactionDto);
+        return Response.status(HttpStatus.CREATED_201).entity(
+                new ResponseDto(HttpStatus.CREATED_201, "OK", Map.of("transactionStatus", transactionStatusDto))
+        ).build();
     }
 
     @GET
     @Path("transaction/{id}")
     public Response getTransaction(@PathParam("id") final String id) {
-        List<IDto> resList =  recordKeepingService.getTransaction(id);
+        List<IDto> resList = recordKeepingService.getTransaction(id);
         return Response.status(HttpStatus.OK_200).entity(
-                new ResponseDto(HttpStatus.OK_200, "OK", Map.of("transactionStatus", resList.get(0), "transaction", resList.get(1)))
+                new ResponseDto(
+                        HttpStatus.OK_200, "OK", Map.of("transactionStatus", resList.get(0), "transaction", resList.get(1)))
         ).build();
     }
 

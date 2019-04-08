@@ -22,9 +22,11 @@ public class RecordKeepingService implements IRecordKeepingService {
 
     private static final Logger logger = Logger.getLogger(RecordKeepingService.class);
     private TransactionDao transactionDao;
+    private ITransactionApprovalService transactionApprovalService;
 
-    public RecordKeepingService(TransactionDao transactionDao) {
+    public RecordKeepingService(TransactionDao transactionDao, ITransactionApprovalService transactionApprovalService) {
         this.transactionDao = transactionDao;
+        this.transactionApprovalService = transactionApprovalService;
     }
 
     // api
@@ -32,13 +34,19 @@ public class RecordKeepingService implements IRecordKeepingService {
     // Create
 
     @Override
-    public void createTransaction(TransactionDto transactionDto) {
+    public TransactionStatusDto createTransaction(TransactionDto transactionDto) {
         String correlationId;
         TransactionStatusDto transactionStatusDto = createCorrelationID(transactionDto);
         TransactionStatus transactionStatus = new TransactionStatus(transactionStatusDto);
         Transaction transaction = new Transaction(transactionDto);
-
+        logger.info("new transaction going to db: " + transaction.toString());
         correlationId = transactionDao.createStatusRecord(transactionStatus, transaction);
+        logger.info("transaction recorded to db with correlation id: " + correlationId);
+        transactionDto.setCorrelationId(correlationId);
+        TransactionStatusDto transactionStatusDtoUpdated = transactionApprovalService.sendTransactionForApproval(transactionDto);
+        transactionDao.updateStatusRecord(correlationId, new TransactionStatus(transactionStatusDtoUpdated));
+        logger.info("updating transaction status with " + transactionStatusDtoUpdated.toString());
+        return transactionStatusDtoUpdated;
     }
 
     // Get

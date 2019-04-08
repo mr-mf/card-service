@@ -250,9 +250,9 @@ public class TransactionDao {
             connection.commit();
 
         } catch (SQLException sq1) {
+            logger.error("failed to update, rolling back the transaction, reason: " + sq1.getMessage());
             try {
                 connection.rollback();
-                logger.error("failed to update, rolling back the transaction, reason: " + sq1.getMessage());
                 throw new DatabaseException(sq1.getMessage(), sq1);
             } catch (SQLException sq2) {
                 logger.error("failed to rollback transaction, reason: " + sq2.getMessage());
