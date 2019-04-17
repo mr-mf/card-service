@@ -1,11 +1,7 @@
 package com.mishas.stuff.ms.repository.dao;
 
-import com.mishas.stuff.ms.repository.DataSource;
-import com.mishas.stuff.ms.repository.model.IModel;
 import com.mishas.stuff.ms.repository.model.Transaction;
-import com.mishas.stuff.ms.repository.model.TransactionStatus;
 
-import com.mishas.stuff.ms.utils.Status;
 import org.apache.log4j.Logger;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
@@ -14,14 +10,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.jooq.SQLDialect.POSTGRES;
 import static org.jooq.impl.DSL.field;
 import static org.jooq.impl.DSL.table;
 
-import com.mishas.stuff.ms.utils.exceptions.DatabaseException;
 
 public class TransactionRepository {
 
@@ -122,14 +115,8 @@ public class TransactionRepository {
             }
         } finally {
             try {if (rs != null) { rs.close(); } } catch (SQLException sq) { }
-            try {if (pst != null) { pst.close(); } } catch (SQLException s) {}
+            try {if (pst != null) { pst.close(); } } catch (SQLException sq) {}
         }
         return transaction;
-    }
-
-    // get transaction for update
-
-    public Transaction getTransactionForUpdate(String correlationId, Connection connection) throws SQLException {
-
     }
 }

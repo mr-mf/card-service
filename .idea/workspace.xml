@@ -2,34 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f54435f3-e232-4f01-91bd-7553586ced74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client-account-service/card-service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mastercard-service/master-card-service.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/utils/exceptions/HttpClientException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/HttpClientExceptionsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/dto/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/dto/TransactionDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/dto/TransactionStatusDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/dto/TransactionStatusDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-account-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client-account-service/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/mastercard-service/target/" />
@@ -44,15 +21,16 @@
     <session id="1229538649">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="52" />
+          <entry key="java" value="61" />
           <entry key="properties" value="1" />
           <entry key="xml" value="10" />
           <entry key="yaml" value="2" />
@@ -60,7 +38,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="52" />
+          <entry key="JAVA" value="61" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="10" />
           <entry key="YAML" value="2" />
@@ -69,14 +47,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
-          <entry key="java" value="1397" />
+          <entry key="java" value="1963" />
           <entry key="properties" value="29" />
           <entry key="xml" value="129" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1397" />
+          <entry key="JAVA" value="1963" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="Properties" value="29" />
           <entry key="XML" value="129" />
@@ -89,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+            <state relative-caret-position="557">
+              <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,10 +77,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/DatabaseExcpetionMapper.java">
+        <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="12" selection-start-line="12" selection-end-line="23" selection-end-column="1" />
+            <state relative-caret-position="-724">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,47 +91,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/HttpClientExceptionsMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="465">
+              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/utils/exceptions/HttpClientException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="32" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/utils/exceptions/DatabaseException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="18" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="108" column="26" lean-forward="true" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -158,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+            <state relative-caret-position="483">
+              <caret line="130" column="13" lean-forward="true" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,22 +113,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/MastercardApplication.java">
+        <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="53" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="424">
+              <caret line="43" column="83" lean-forward="true" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
+        <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+            <state relative-caret-position="225">
+              <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -232,12 +174,12 @@
         <option value="$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" />
-        <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/utils/exceptions/HttpClientException.java" />
-        <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/HttpClientExceptionsMapper.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" />
+        <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" />
         <option value="$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" />
       </list>
     </option>
@@ -280,8 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -354,6 +294,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="cas" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client-account-service" type="b2602c69:ProjectViewProjectNode" />
+              <item name="card-service" type="462c0819:PsiDirectoryNode" />
+              <item name="client-account-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cas" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="client-account-service" type="b2602c69:ProjectViewProjectNode" />
@@ -547,12 +497,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555428384226" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555488740366" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -621,12 +573,13 @@
       <option name="presentableId" value="Default" />
       <updated>1554805926951</updated>
       <workItem from="1554805928251" duration="11842000" />
-      <workItem from="1555414260150" duration="9284000" />
+      <workItem from="1555414260150" duration="10318000" />
+      <workItem from="1555488837430" duration="6241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21126000" />
+    <option name="totallyTimeSpent" value="28401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -637,7 +590,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26800978" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25641027" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.32941177" />
@@ -667,6 +620,42 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
       <window_info anchor="right" id="CDI" order="11" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25641027" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Message" order="8" />
+      <window_info anchor="bottom" id="Find" order="9" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.32941177" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="14" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="BPMNPalette" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" />
+      <window_info anchor="right" id="Palette" order="7" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="8" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
+      <window_info anchor="right" id="CDI" order="11" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -777,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="96" column="14" lean-forward="true" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -815,13 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="69" selection-start-line="69" selection-end-line="69" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/web/dto/TransactionDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -843,20 +818,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java">
+    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/HttpClientExceptionsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+        <state relative-caret-position="90">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -873,31 +838,14 @@
     <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/utils/exceptions/DatabaseException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
+          <caret line="3" selection-start-line="3" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/DatabaseExcpetionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" selection-start-line="12" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/exceptionmapper/HttpClientExceptionsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -911,17 +859,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="108" column="26" lean-forward="true" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+        <state relative-caret-position="225">
+          <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="43" column="83" lean-forward="true" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-724">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionStatusRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="130" column="13" lean-forward="true" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mastercard-service/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+        <state relative-caret-position="557">
+          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

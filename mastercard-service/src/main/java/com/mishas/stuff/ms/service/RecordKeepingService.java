@@ -5,6 +5,7 @@ import com.mishas.stuff.ms.repository.dao.TransactionRepository;
 import com.mishas.stuff.ms.repository.dao.TransactionStatusRepository;
 import com.mishas.stuff.ms.repository.model.Transaction;
 import com.mishas.stuff.ms.repository.model.TransactionStatus;
+import com.mishas.stuff.ms.utils.Status;
 import com.mishas.stuff.ms.utils.exceptions.DatabaseException;
 import com.mishas.stuff.ms.web.dto.IDto;
 import com.mishas.stuff.ms.web.dto.TransactionDto;
@@ -54,14 +55,24 @@ public class RecordKeepingService implements IRecordKeepingService {
 
         try {
             connection = DataSource.getConnection();
+            try {
+                transactionId = transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
+            } catch (SQLException sqIgnore) {
+                logger.info("Could not create transaction status with correlation ID: " + correlationId + " transaction already exist");
+                connection.rollback();
+            }
+            // get transaction status for update, so it cant be queried while in transit
+            transactionStatus = transactionStatusRepository.getTransactionStatusForUpdate(correlationId, connection);
 
-            transactionId = transactionDao.createTransaction(transaction, connection);
-            transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
-            TransactionStatusDto transactionStatusDtoFrom = transactionApprovalService.sendTransactionForApproval(transactionDto);
-            // update
-
-            transactionDao.updateStatusRecord(correlationId, new TransactionStatus(transactionStatusDtoUpdated));
-
+            if (transactionId != null) {
+                transactionDao.createTransaction(transaction, connection);
+            } else if (!transactionStatus.getTransactionStatus().toString().equals(Status.PENDING.toString())) {
+                connection.commit();
+                return new TransactionStatusDto(transactionStatus);
+            }
+            transactionStatusDto = transactionApprovalService.sendTransactionForApproval(transactionDto);
+            transactionStatusRepository.updateTransactionStatus(new TransactionStatus(transactionStatusDto), connection);
+            connection.commit();
         } catch (SQLException sq) {
             logger.error("Could not create transaction with correlation ID: " + correlationId);
             try {
@@ -73,14 +84,7 @@ public class RecordKeepingService implements IRecordKeepingService {
         } finally {
             try {if (connection != null) { connection.close(); } } catch (SQLException sq) { }
         }
-        logger.info("new transaction going to db: " + transaction.toString());
-
-        logger.info("transaction recorded to db with correlation id: " + correlationId);
-        transactionDto.setCorrelationId(correlationId);
-
-
-        logger.info("updating transaction status with " + transactionStatusDtoUpdated.toString());
-        return transactionStatusDtoUpdated;
+        return transactionStatusDto;
     }
 
     // Get

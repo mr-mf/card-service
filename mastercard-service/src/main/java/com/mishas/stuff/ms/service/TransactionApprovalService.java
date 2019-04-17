@@ -31,7 +31,6 @@ public class TransactionApprovalService implements ITransactionApprovalService {
         TransactionStatusDto transactionStatusDto = null;
         try {
             StringEntity transactionDtoResource = convertObjectToPayload(transactionDto);
-            logger.info("Transaction Stirng Entity " + transactionDtoResource.toString());
             String transactionStatusStringResponse =  clientAccountSerivceHttpClient.updateResource("/api/v1/account", transactionDtoResource);
             transactionStatusDto = convertStringToTransactionStatusDto(transactionStatusStringResponse);
         } catch (IOException | URISyntaxException ioe) {

@@ -136,11 +136,13 @@ public class TransactionStatusRepository {
             pst = connection.prepareStatement(
                     create.update(table("TRANSACTION_STATUS"))
                             .set(field("STATUS"), transactionStatus.getTransactionStatus().toString())
+                            .set(field("TRANSACTION_TIMESTAMP"), transactionStatus.getTransactionTimestamp())
                             .where(field("ID").eq(transactionStatus.getId()))
                             .getSQL()
             );
             pst.setString(1, transactionStatus.getTransactionStatus().toString());
-            pst.setString(2, transactionStatus.getId());
+            pst.setString(2, transactionStatus.getTransactionTimestamp().toString());
+            pst.setString(3, transactionStatus.getId());
             pst.executeUpdate();
         } finally {
             try {if (pst != null) { pst.close(); } } catch (SQLException sq) {}
