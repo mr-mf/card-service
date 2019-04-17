@@ -10,6 +10,4 @@ public interface IRecordKeepingService {
     public TransactionStatusDto createTransaction(TransactionDto transactionDto);
 
     public List<IDto> getTransaction(String correlationId);
-
-    public void updateTransaction(String correlationId, TransactionStatusDto transactionStatusDto);
 }

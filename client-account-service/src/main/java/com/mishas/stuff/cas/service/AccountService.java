@@ -33,12 +33,42 @@ public class AccountService implements IAccountService {
     @Override
     public Long createAccount(AccountDto accountDto) {
         final Account account = new Account(accountDto);
-        return accountRepository.createAccount(account);
+        Connection connection = null;
+        try {
+            connection = DataSource.getConnection();
+            accountRepository.createAccount(account, connection);
+            connection.commit();
+        } catch (SQLException sq) {
+            logger.error("could not create an account: " + sq.getMessage());
+            try {
+                connection.rollback();
+            } catch (SQLException | NullPointerException sq2) {
+            }
+            throw new DatabaseException("Could not create a new Account", sq);
+        } finally {
+            try {if (connection != null) { connection.close(); } } catch (SQLException sq3) { }
+        }
+        return null;
     }
 
     @Override
     public AccountDto getAccount(Long id) {
-        Account account = accountRepository.getAccount(id);
+        Connection connection = null;
+        Account account = null;
+        try {
+            connection = DataSource.getConnection();
+            account = accountRepository.getAccount(id, connection);
+            connection.commit();
+        } catch (SQLException sq) {
+            logger.error("could not retrieve an account: " + sq.getMessage());
+            try {
+                connection.rollback();
+            } catch (SQLException | NullPointerException sq2) {
+            }
+            throw new DatabaseException("could not retrieve an account: ", sq);
+        } finally {
+            try {if (connection != null) { connection.close(); } } catch (SQLException sq3) { }
+        }
         return new AccountDto(account);
     }
 
@@ -47,11 +77,12 @@ public class AccountService implements IAccountService {
         TransactionStatus transactionStatus;
         Connection connection = null;
         try {
+            logger.info("Starting account service with transaction: " + transactionDto.toString());
             connection = DataSource.getConnection();
             Account account = accountRepository.getAccountForUpdate(transactionDto.getClientCardNumber(), connection);
             // get the account balance and the transaction amount and calculate the difference
             BigDecimal accountBalance = account.getBalance().setScale(2, RoundingMode.HALF_UP);
-            BigDecimal transaction = transactionDto.getTransactionAmount().setScale(2, RoundingMode.HALF_UP);
+            BigDecimal transactionAmount = transactionDto.getTransactionAmount().setScale(2, RoundingMode.HALF_UP);
             BigDecimal remainingAccountBalance;
             transactionStatus = new TransactionStatus(transactionDto.getCorrelationId(), LocalDateTime.now(), Status.PENDING);
             // update the transaction status table
@@ -59,34 +90,50 @@ public class AccountService implements IAccountService {
                 transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
             } catch (SQLException seIgnore) {
                 // ignore
+                if (logger.isDebugEnabled()) {
+                    logger.warn("Transaction status already exists: " + seIgnore.getMessage());
+                }
                 connection.rollback();
             }
             transactionStatus = transactionStatusRepository.getTransactionStatusForUpdate(transactionStatus.getId(), connection);
             if (!transactionStatus.getTransactionStatus().toString().equals(Status.PENDING.toString())) {
+                if (logger.isDebugEnabled()) {
+                    logger.info("Transaction already exists, has status " + transactionStatus.getTransactionStatus());
+                }
                 connection.commit();
                 return new TransactionStatusDto(transactionStatus);
             }
             // determine if transaction is negative or positive
-            if (transaction.compareTo(BigDecimal.ZERO) > 0) {
-                remainingAccountBalance = accountBalance.add(transaction).setScale(2, RoundingMode.HALF_UP);
+            if (transactionAmount.compareTo(BigDecimal.ZERO) > 0) {
+                remainingAccountBalance = accountBalance.add(transactionAmount).setScale(2, RoundingMode.HALF_UP);
                 // set transaction status to ACCEPTED
                 transactionStatus.setTransactionStatus(Status.ACCEPTED);
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Transaction accepted");
+                }
             } else {
-                transaction = transaction.abs();
-                remainingAccountBalance = accountBalance.subtract(transaction).setScale(2, RoundingMode.HALF_UP);
+                transactionAmount = transactionAmount.abs();
+                remainingAccountBalance = accountBalance.subtract(transactionAmount).setScale(2, RoundingMode.HALF_UP);
                 // decline or approve
                 if (remainingAccountBalance.compareTo(BigDecimal.ZERO) < 0) {
                     // set transaction status to DECLINED
                     transactionStatus.setTransactionStatus(Status.DECLINED);
+                    if (logger.isDebugEnabled()) {
+                        logger.debug("Transaction declined");
+                    }
                 } else {
                     // set transaction status to ACCEPTED
                     transactionStatus.setTransactionStatus(Status.ACCEPTED);
+                    if (logger.isDebugEnabled()) {
+                        logger.debug("Transaction accepted");
+                    }
                 }
             }
             if (transactionStatus.getTransactionStatus().toString().equals(Status.ACCEPTED.toString())) {
                 // update the balance for the account model and update the account repository
                 account.setBalance(remainingAccountBalance);
                 accountRepository.updateAccount(account, connection);
+                logger.info("account balance updated by" );
             }
             // update the transaction status table
             transactionStatusRepository.updateTransactionStatus(transactionStatus, connection);

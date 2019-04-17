@@ -2,6 +2,7 @@ package com.mishas.stuff.cas.repository.dao;
 
 import com.mishas.stuff.cas.repository.model.TransactionStatus;
 import com.mishas.stuff.cas.utils.Status;
+import org.apache.log4j.Logger;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
 
@@ -16,8 +17,13 @@ import static org.jooq.impl.DSL.table;
 
 public class TransactionStatusRepository {
 
+    private static final Logger logger = Logger.getLogger(TransactionStatusRepository.class);
+
     public void createTransactionStatus(TransactionStatus transactionStatus, Connection connection) throws SQLException {
         PreparedStatement pst = null;
+        if(logger.isDebugEnabled()) {
+            logger.debug("creating a transaction status: " + transactionStatus.toString());
+        }
         try {
             DSLContext create = DSL.using(connection, POSTGRES);
             // transaction status query
@@ -43,10 +49,47 @@ public class TransactionStatusRepository {
         }
     }
 
+    // Get
+
+    public TransactionStatus getTransactionStatus(String id, Connection connection) throws SQLException {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        TransactionStatus transactionStatus;
+        if(logger.isDebugEnabled()) {
+            logger.debug("retrieving a transaction status with ID: " + id + " for an update");
+        }
+        try {
+            DSLContext create = DSL.using(connection, POSTGRES);
+            pst = connection.prepareStatement(
+                    create.select().from(table("TRANSACTION_STATUS")).where(field("ID").eq(id)).getSQL()
+            );
+            pst.setString(1, id);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                transactionStatus = new TransactionStatus(
+                        rs.getString("ID"),
+                        rs.getTimestamp("TRANSACTION_TIMESTAMP").toLocalDateTime(),
+                        Status.valueOf(rs.getString("STATUS"))
+                );
+            } else {
+                throw new SQLException("transaction status is null");
+            }
+        } finally {
+            try {if (rs != null) { rs.close(); } } catch (SQLException sq) {}
+            try {if (pst != null) { pst.close(); } } catch (SQLException sq2) {}
+        }
+        return transactionStatus;
+    }
+
+    // get for update
+
     public TransactionStatus getTransactionStatusForUpdate(String id, Connection connection) throws SQLException {
         PreparedStatement pst = null;
         ResultSet rs = null;
         TransactionStatus transactionStatus;
+        if(logger.isDebugEnabled()) {
+            logger.debug("retrieving a transaction status with ID: " + id + " for an update");
+        }
         try {
             DSLContext create = DSL.using(connection, POSTGRES);
             pst = connection.prepareStatement(
@@ -74,18 +117,18 @@ public class TransactionStatusRepository {
         PreparedStatement pst = null;
         try {
             DSLContext create = DSL.using(connection, POSTGRES);
-            // perform update
+            if(logger.isDebugEnabled()) {
+                logger.debug("updating transaction status with ID: " + transactionStatus.getId());
+            }
             pst = connection.prepareStatement(
                     create.update(table("TRANSACTION_STATUS"))
                             .set(field("STATUS"), transactionStatus.getTransactionStatus().toString())
                             .where(field("ID").eq(transactionStatus.getId()))
                             .getSQL()
             );
-
             pst.setString(1, transactionStatus.getTransactionStatus().toString());
             pst.setString(2, transactionStatus.getId());
             pst.executeUpdate();
-
         } finally {
             try {if (pst != null) { pst.close(); } } catch (SQLException sq) {}
         }

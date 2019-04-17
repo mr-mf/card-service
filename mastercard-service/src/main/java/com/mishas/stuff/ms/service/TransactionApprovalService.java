@@ -3,6 +3,7 @@ package com.mishas.stuff.ms.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mishas.stuff.ms.utils.exceptions.HttpClientException;
 import com.mishas.stuff.ms.web.client.ClientAccountSerivceHttpClient;
 import com.mishas.stuff.ms.web.dto.IDto;
 import com.mishas.stuff.ms.web.dto.TransactionDto;
@@ -35,6 +36,7 @@ public class TransactionApprovalService implements ITransactionApprovalService {
             transactionStatusDto = convertStringToTransactionStatusDto(transactionStatusStringResponse);
         } catch (IOException | URISyntaxException ioe) {
             logger.error("Could not confirm the transaction " + ioe.getMessage());
+            throw new HttpClientException("Could not confirm the transaction " + transactionDto.getCorrelationId(), ioe);
         }
         return transactionStatusDto;
     }

@@ -7,7 +7,11 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.mishas.stuff.cas.repository.model.TransactionStatus;
 import com.mishas.stuff.cas.utils.Status;
+import jdk.jfr.Timestamp;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDateTime;
 
 public class TransactionStatusDto implements IDto {

@@ -2,7 +2,6 @@ package com.mishas.stuff.ms.repository;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 

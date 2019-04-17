@@ -1,8 +1,6 @@
 package com.mishas.stuff.cas.repository.dao;
 
-import com.mishas.stuff.cas.repository.DataSource;
 import com.mishas.stuff.cas.repository.model.Account;
-import com.mishas.stuff.cas.utils.exceptions.DatabaseException;
 import org.apache.log4j.Logger;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
@@ -20,15 +18,16 @@ public class AccountRepository {
 
     private static final Logger logger = Logger.getLogger(AccountRepository.class);
 
-    public Long createAccount(Account account) {
+    // create account
+
+    public Long createAccount(Account account, Connection connection) throws SQLException {
         Long id = null;
-        Connection connection = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
-
-        // create account
+        if(logger.isDebugEnabled()) {
+            logger.debug("creating a new account: " + account.toString());
+        }
         try {
-            connection = DataSource.getConnection();
             DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
             pst = connection.prepareStatement(
                     create.insertInto(
@@ -50,36 +49,27 @@ public class AccountRepository {
             rs = pst.executeQuery();
             if (rs.next()) {
                 id = rs.getLong("ID");
+                if(logger.isDebugEnabled()) {
+                    logger.debug("account with id: " + id + " was created successfully");
+                }
             }
-            connection.commit();
-
-        } catch (SQLException sq1) {
-            logger.error("Could not create and account: " + sq1);
-            try {
-                connection.rollback();
-            } catch (SQLException | NullPointerException se2) {
-                // ignore
-            }
-            throw new DatabaseException("Could not create and account", sq1);
-
         } finally {
             try {if (rs != null) { rs.close(); } } catch (SQLException sq3) { }
             try {if (pst != null) { pst.close(); } } catch (SQLException sq4) { }
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq5) { }
         }
         return id;
     }
 
     // get account
 
-    public Account getAccount(Long id) {
+    public Account getAccount(Long id, Connection connection) throws SQLException {
         Account account = null;
-        Connection connection = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
-
+        if(logger.isDebugEnabled()) {
+            logger.debug("retrieving an account with ID: " + id.toString());
+        }
         try {
-            connection = DataSource.getConnection();
             DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
             pst = connection.prepareStatement(
                     create.select(
@@ -103,21 +93,9 @@ public class AccountRepository {
                         rs.getString("CARD_NUMBER")
                 );
             }
-            connection.commit();
-
-        } catch (SQLException se1) {
-            logger.error("Could not create and account: " + se1);
-            try {
-                connection.rollback();
-            } catch (SQLException | NullPointerException se2) {
-                // ignore
-            }
-            throw new DatabaseException("Could not create and account", se1);
-
         } finally {
             try {if (rs != null) { rs.close(); } } catch (SQLException sq3) { }
             try {if (pst != null) { pst.close(); } } catch (SQLException sq4) { }
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq5) { }
         }
         return account;
     }
@@ -127,7 +105,10 @@ public class AccountRepository {
     public Account getAccountForUpdate(String creditCardNumber, Connection connection) throws SQLException {
         PreparedStatement pst = null;
         ResultSet rs = null;
-        Account account = null;
+        Account account;
+        if(logger.isDebugEnabled()) {
+            logger.debug("retrieving an account for update with card number: " + creditCardNumber.toString());
+        }
         try {
             DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
             pst = connection.prepareStatement(
@@ -146,6 +127,7 @@ public class AccountRepository {
             // execute query
             rs = pst.executeQuery();
             if (!rs.next()) {
+                logger.error("Account with a credit card number: "+ creditCardNumber + " does not exist in th system");
                 // have to kill it because it will be used as part of transaction
                 throw new SQLException("Bank account for the credit card: " + creditCardNumber + " does not exist");
             } else {
@@ -167,6 +149,9 @@ public class AccountRepository {
 
     public void updateAccount(Account account, Connection connection) throws SQLException {
         PreparedStatement pst = null;
+        if(logger.isDebugEnabled()) {
+            logger.debug("updating tan account with credit card number: " + account.getCardNumber());
+        }
         try {
             DSLContext create = DSL.using(connection, SQLDialect.POSTGRES);
             pst = connection.prepareStatement(

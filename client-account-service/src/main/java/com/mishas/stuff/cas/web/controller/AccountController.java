@@ -6,8 +6,10 @@ import com.mishas.stuff.cas.web.dto.AccountDto;
 import com.mishas.stuff.cas.web.dto.ResponseDto;
 import com.mishas.stuff.cas.web.dto.TransactionDto;
 import com.mishas.stuff.cas.web.dto.TransactionStatusDto;
+import org.apache.log4j.Logger;
 import org.eclipse.jetty.http.HttpStatus;
 
+import javax.validation.constraints.Size;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -18,6 +20,7 @@ import java.util.Map;
 public class AccountController {
 
     private IAccountService accountService;
+    private static final Logger logger = Logger.getLogger(AccountController.class);
 
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
@@ -33,7 +36,7 @@ public class AccountController {
 
     @GET
     @Path("account/{id}")
-    public Response getAccount(@PathParam("id") final Long id) {
+    public Response getAccount(@PathParam("id") @Size(max=1) final Long id) {
        AccountDto accountDto =  accountService.getAccount(id);
         return Response.status(HttpStatus.OK_200).entity(
                 new ResponseDto(HttpStatus.OK_200, "OK", Map.of("account", accountDto))
@@ -43,7 +46,11 @@ public class AccountController {
     @PUT
     @Path("account")
     public Response updateAccount(TransactionDto transactionDto) {
+        logger.info("started transaction approval process: " + transactionDto.getCorrelationId());
         TransactionStatusDto transactionStatusDto = accountService.updateAccount(transactionDto);
+        if (logger.isDebugEnabled()) {
+            logger.debug("transaction status: " + transactionStatusDto.getTransactionStaus().toString());
+        }
         return Response.status(HttpStatus.OK_200).entity(
                 new ResponseDto(HttpStatus.OK_200, "OK", Map.of("transactionStatus", transactionStatusDto))
         ).build();

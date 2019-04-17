@@ -5,7 +5,6 @@ import com.mishas.stuff.ms.web.dto.IDto;
 import com.mishas.stuff.ms.web.dto.ResponseDto;
 import com.mishas.stuff.ms.web.dto.TransactionDto;
 import com.mishas.stuff.ms.web.dto.TransactionStatusDto;
-import io.swagger.annotations.Api;
 import org.eclipse.jetty.http.HttpStatus;
 
 import javax.ws.rs.*;
@@ -16,7 +15,6 @@ import java.util.Map;
 
 @Path("/")
 @Produces(MediaType.APPLICATION_JSON)
-@Api
 public class CardController {
 
     private IRecordKeepingService recordKeepingService;
@@ -43,13 +41,5 @@ public class CardController {
                 new ResponseDto(
                         HttpStatus.OK_200, "OK", Map.of("transactionStatus", resList.get(0), "transaction", resList.get(1)))
         ).build();
-    }
-
-    @PUT
-    @Path("transaction/{id}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateTransaction(@PathParam("id") final String id, TransactionStatusDto transactionStatusDto) {
-        recordKeepingService.updateTransaction(id, transactionStatusDto);
-        return Response.status(HttpStatus.NO_CONTENT_204).build();
     }
 }

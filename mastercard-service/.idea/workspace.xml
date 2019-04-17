@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="331e5b7b-7551-4637-b559-308dc29486ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionApprovalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client-account-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/repository/dao/TransactionStatusRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/service/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/web/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/java/com/mishas/stuff/cas/web/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-account-service/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client-account-service/target/classes/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/MastercardApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/repository/dao/TransactionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/IRecordKeepingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/dto/TransactionDto.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,7 +25,7 @@
     <session id="609857160">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.3" value="1" />
@@ -65,7 +62,7 @@
           <entry key="java" value="155" />
           <entry key="properties" value="6" />
           <entry key="sql" value="17" />
-          <entry key="xml" value="7" />
+          <entry key="xml" value="8" />
           <entry key="yaml" value="2" />
         </counts>
       </usages-collector>
@@ -74,60 +71,14 @@
           <entry key="JAVA" value="155" />
           <entry key="Properties" value="6" />
           <entry key="SQL" value="17" />
-          <entry key="XML" value="7" />
+          <entry key="XML" value="8" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/RecordKeepingService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="43" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/ITransactionApprovalService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -223,11 +174,6 @@
             <path>
               <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
               <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="schema-mastercard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -235,124 +181,6 @@
               <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mastercard-service" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mastercard-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -364,7 +192,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554736983942" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554805906466" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -490,7 +318,7 @@
       <workItem from="1554453681602" duration="19000" />
       <workItem from="1554637950895" duration="1005000" />
       <workItem from="1554639393212" duration="694000" />
-      <workItem from="1554649577791" duration="10642000" />
+      <workItem from="1554649577791" duration="13453000" />
     </task>
     <servers />
   </component>
@@ -515,7 +343,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117612000" />
+    <option name="totallyTimeSpent" value="120423000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -528,7 +356,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30463982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -539,7 +366,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.2510204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.2510204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -678,13 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="58" selection-start-line="58" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/JettyServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -804,6 +624,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/web/client/ClientAccountSerivceHttpClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -818,16 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mishas/stuff/ms/service/TransactionApprovalService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -2,6 +2,9 @@ package com.mishas.stuff.cas.web.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
