@@ -21,10 +21,10 @@ public class TransactionStatusRepository {
 
     // Create
 
-    public Long createTransactionStatus(TransactionStatus transactionStatus, Connection connection) throws SQLException {
+    public String createTransactionStatus(TransactionStatus transactionStatus, Connection connection) throws SQLException {
         PreparedStatement pst = null;
         ResultSet rs = null;
-        Long id = null;
+        String id = null;
         if(logger.isDebugEnabled()) {
             logger.debug("creating a transaction status: " + transactionStatus.toString());
         }
@@ -49,9 +49,9 @@ public class TransactionStatusRepository {
             pst.setString(1, transactionStatus.getId());
             pst.setString(2, transactionStatus.getTransactionTimestamp().toString());
             pst.setString(3, transactionStatus.getTransactionStatus().toString());
-            pst.executeQuery();
+            rs = pst.executeQuery();
             if (rs.next()) {
-                id = rs.getLong("ID");
+                id = rs.getString("ID");
             }
         } finally {
             try {if (rs != null) { rs.close(); } } catch (SQLException sq) {}

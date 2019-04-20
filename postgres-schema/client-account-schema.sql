@@ -23,15 +23,6 @@ CREATE TABLE IF NOT EXISTS transaction_status(
   status VARCHAR (10) NOT NULL
 );
 
--- record of the transaction
--- CREATE TABLE IF NOT EXISTS transaction(
---   id SERIAL PRIMARY KEY,
---   correlation_id VARCHAR (50) REFERENCES transaction_status (id) ON UPDATE NO ACTION ON DELETE NO ACTION,
---   transaction_amount decimal(12,2) NOT NULL,
---   transaction_currency VARCHAR (3) NOT NULL,
---   client_card_number VARCHAR (50) REFERENCES account (card_number) ON UPDATE NO ACTION ON DELETE NO ACTION
--- );
-
 -- grant CRUD rights to mastercard_service user
 GRANT SELECT, INSERT, UPDATE, DELETE
 ON ALL TABLES IN SCHEMA public

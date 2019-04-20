@@ -43,8 +43,8 @@ public class RecordKeepingService implements IRecordKeepingService {
 
     @Override
     public TransactionStatusDto createTransaction(TransactionDto transactionDto) {
-        Long transactionId = null;
         Connection connection = null;
+        String CorrelationIDFronDb = null;
 
         TransactionStatusDto transactionStatusDto = createCorrelationID(transactionDto);
         TransactionStatus transactionStatus = new TransactionStatus(transactionStatusDto);
@@ -56,15 +56,14 @@ public class RecordKeepingService implements IRecordKeepingService {
         try {
             connection = DataSource.getConnection();
             try {
-                transactionId = transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
+                CorrelationIDFronDb = transactionStatusRepository.createTransactionStatus(transactionStatus, connection);
             } catch (SQLException sqIgnore) {
                 logger.info("Could not create transaction status with correlation ID: " + correlationId + " transaction already exist");
                 connection.rollback();
             }
             // get transaction status for update, so it cant be queried while in transit
             transactionStatus = transactionStatusRepository.getTransactionStatusForUpdate(correlationId, connection);
-
-            if (transactionId != null) {
+            if (CorrelationIDFronDb != null) {
                 transactionDao.createTransaction(transaction, connection);
             } else if (!transactionStatus.getTransactionStatus().toString().equals(Status.PENDING.toString())) {
                 connection.commit();
@@ -74,7 +73,7 @@ public class RecordKeepingService implements IRecordKeepingService {
             transactionStatusRepository.updateTransactionStatus(new TransactionStatus(transactionStatusDto), connection);
             connection.commit();
         } catch (SQLException sq) {
-            logger.error("Could not create transaction with correlation ID: " + correlationId);
+            logger.error("Could not create transaction with correlation ID: " + correlationId + " reason: " + sq.getMessage());
             try {
                 connection.rollback();
             } catch (SQLException | NullPointerException e) {
@@ -82,7 +81,7 @@ public class RecordKeepingService implements IRecordKeepingService {
             }
             throw new DatabaseException("Could not create transaction with correlation ID: " + correlationId, sq);
         } finally {
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq) { }
+            try {if (connection != null) { connection.rollback(); connection.close(); } } catch (SQLException sq) { }
         }
         return transactionStatusDto;
     }
@@ -108,7 +107,7 @@ public class RecordKeepingService implements IRecordKeepingService {
             }
             throw new DatabaseException("Could not get the transaction with correlation ID: " + correlationId, sq);
         } finally {
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq) { }
+            try {if (connection != null) { connection.rollback(); connection.close(); } } catch (SQLException sq) { }
         }
         TransactionStatusDto transactionStatusDto = new TransactionStatusDto(transactionStatus);
         TransactionDto transactionDto = new TransactionDto(transaction);

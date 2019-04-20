@@ -46,7 +46,7 @@ public class AccountService implements IAccountService {
             }
             throw new DatabaseException("Could not create a new Account", sq);
         } finally {
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq3) { }
+            try {if (connection != null) { connection.rollback(); connection.close(); } } catch (SQLException sq3) { }
         }
         return null;
     }
@@ -67,7 +67,7 @@ public class AccountService implements IAccountService {
             }
             throw new DatabaseException("could not retrieve an account: ", sq);
         } finally {
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq3) { }
+            try {if (connection != null) { connection.rollback(); connection.close(); } } catch (SQLException sq3) { }
         }
         return new AccountDto(account);
     }
@@ -148,7 +148,7 @@ public class AccountService implements IAccountService {
             }
             throw new DatabaseException("Could not update client Account", se);
         } finally {
-            try {if (connection != null) { connection.close(); } } catch (SQLException sq3) { }
+            try {if (connection != null) { connection.rollback(); connection.close(); } } catch (SQLException sq3) { }
         }
         return new TransactionStatusDto(transactionStatus);
     }
